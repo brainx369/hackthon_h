@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.fulfilment.application.monolith.stores.StoreTransactionIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.445 s <<< FAILURE! -- in com.fulfilment.application.monolith.stores.StoreTransactionIntegrationTest
-com.fulfilment.application.monolith.stores.StoreTransactionIntegrationTest.testLegacySystemNotNotifiedOnFailedStoreCreation -- Time elapsed: 2.428 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.301 s <<< FAILURE! -- in com.fulfilment.application.monolith.stores.StoreTransactionIntegrationTest
+com.fulfilment.application.monolith.stores.StoreTransactionIntegrationTest.testLegacySystemNotNotifiedOnFailedStoreCreation -- Time elapsed: 2.283 s <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 legacyStoreManagerGateway.createStoreOnLegacySystem(
@@ -19,7 +19,7 @@ But invoked here:
 	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestMethod(QuarkusTestExtension.java:823)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	Suppressed: org.hibernate.exception.ConstraintViolationException: could not execute statement [Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772251861007' )"; SQL statement:
+	Suppressed: org.hibernate.exception.ConstraintViolationException: could not execute statement [Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772255150532' )"; SQL statement:
 insert into Store (name,quantityProductsInStock,id) values (?,?,?) [23505-224]] [insert into Store (name,quantityProductsInStock,id) values (?,?,?)]
 		at org.hibernate.dialect.H2Dialect.lambda$buildSQLExceptionConversionDelegate$3(H2Dialect.java:746)
 		at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
@@ -76,7 +76,7 @@ insert into Store (name,quantityProductsInStock,id) values (?,?,?) [23505-224]] 
 		at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
 		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 		at java.base/java.lang.Thread.run(Thread.java:1583)
-	Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772251861007' )"; SQL statement:
+	Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772255150532' )"; SQL statement:
 insert into Store (name,quantityProductsInStock,id) values (?,?,?) [23505-224]
 		at org.h2.message.DbException.getJdbcSQLException(DbException.java:520)
 		at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
@@ -126,6 +126,6 @@ insert into Store (name,quantityProductsInStock,id) values (?,?,?) [23505-224]
 		at io.quarkus.arc.impl.AroundInvokeInvocationContext.perform(AroundInvokeInvocationContext.java:30)
 		at io.quarkus.arc.impl.InvocationContexts.performAroundInvoke(InvocationContexts.java:27)
 		... 14 more
-	Caused by: [CIRCULAR REFERENCE: org.hibernate.exception.ConstraintViolationException: could not execute statement [Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772251861007' )"; SQL statement:
+	Caused by: [CIRCULAR REFERENCE: org.hibernate.exception.ConstraintViolationException: could not execute statement [Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_4 ON PUBLIC.STORE(NAME NULLS FIRST) VALUES ( /* 4 */ 'IntegrationTest_1772255150532' )"; SQL statement:
 insert into Store (name,quantityProductsInStock,id) values (?,?,?) [23505-224]] [insert into Store (name,quantityProductsInStock,id) values (?,?,?)]]
 
