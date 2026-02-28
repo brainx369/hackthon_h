@@ -3,7 +3,8 @@ package com.fulfilment.application.monolith.warehouses.domain.models;
 import java.time.LocalDateTime;
 
 public class Warehouse {
-
+    public Long id;
+    public Long version;
   // unique identifier
   public String businessUnitCode;
 

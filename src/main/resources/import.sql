@@ -1,11 +1,11 @@
 INSERT INTO store(id, name, quantityProductsInStock) VALUES (1, 'TONSTAD', 10);
 INSERT INTO store(id, name, quantityProductsInStock) VALUES (2, 'KALLAX', 5);
-INSERT INTO store(id, name, quantityProductsInStock) VALUES (3, 'BESTÅ', 3);
+INSERT INTO store(id, name, quantityProductsInStock) VALUES (3, 'BESTA', 3);
 ALTER SEQUENCE store_seq RESTART WITH 4;
 
 INSERT INTO product(id, name, stock) VALUES (1, 'TONSTAD', 10);
 INSERT INTO product(id, name, stock) VALUES (2, 'KALLAX', 5);
-INSERT INTO product(id, name, stock) VALUES (3, 'BESTÅ', 3);
+INSERT INTO product(id, name, stock) VALUES (3, 'BESTA', 3);
 ALTER SEQUENCE product_seq RESTART WITH 4;
 
 INSERT INTO warehouse(id, businessUnitCode, location, capacity, stock, createdAt, archivedAt) 

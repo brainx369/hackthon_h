@@ -1,7 +1,9 @@
 package com.fulfilment.application.monolith.stores;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.event.ObservesAsync;
+import jakarta.enterprise.event.TransactionPhase;
 import jakarta.inject.Inject;
 import org.jboss.logging.Logger;
 
@@ -13,8 +15,9 @@ public class StoreEventObserver {
   @Inject 
   LegacyStoreManagerGateway legacyStoreManagerGateway;
 
-  public void onStoreCreated(@ObservesAsync StoreCreatedEvent event) {
+  public void onStoreCreated(@Observes(during = TransactionPhase.AFTER_SUCCESS) StoreCreatedEvent event) {
     LOGGER.info("Store created event received, syncing with legacy system: " + event.getStore().id);
+
     legacyStoreManagerGateway.createStoreOnLegacySystem(event.getStore());
   }
 

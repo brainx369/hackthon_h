@@ -4,6 +4,8 @@ import com.fulfilment.application.monolith.warehouses.domain.models.Warehouse;
 import com.fulfilment.application.monolith.warehouses.domain.ports.WarehouseStore;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 
 @ApplicationScoped
@@ -27,7 +29,7 @@ public class WarehouseRepository implements WarehouseStore, PanacheRepository<Db
     this.persist(dbWarehouse);
   }
 
-  @Override
+  /*@Override
   public void update(Warehouse warehouse) {
     getEntityManager().createQuery(
       "UPDATE DbWarehouse w SET w.location = :loc, w.capacity = :cap, " +
@@ -42,7 +44,29 @@ public class WarehouseRepository implements WarehouseStore, PanacheRepository<Db
     // Clear persistence context to see updates in subsequent queries
     getEntityManager().flush();
     getEntityManager().clear();
-  }
+  }*/
+
+    @Override
+    @Transactional
+    public void update(Warehouse warehouse) {
+
+        DbWarehouse db = find("businessUnitCode", warehouse.businessUnitCode)
+                .firstResult();
+
+        if (db == null) {
+            throw new RuntimeException("Warehouse not found");
+        }
+
+        db.location = warehouse.location;
+        db.capacity = warehouse.capacity;
+        db.stock = warehouse.stock;
+        db.archivedAt = warehouse.archivedAt;
+
+        // NO manual update query
+        // NO flush
+        // NO clear
+        // Hibernate will automatically check version on commit
+    }
 
   @Override
   public void remove(Warehouse warehouse) {

@@ -20,7 +20,7 @@ public class ProductEndpointTest {
         .get(path)
         .then()
         .statusCode(200)
-        .body(containsString("TONSTAD"), containsString("KALLAX"), containsString("BESTÅ"));
+        .body(containsString("TONSTAD"), containsString("KALLAX"), containsString("BESTA"));
 
     // Delete the TONSTAD:
     given().when().delete(path + "/1").then().statusCode(204);
@@ -31,6 +31,6 @@ public class ProductEndpointTest {
         .get(path)
         .then()
         .statusCode(200)
-        .body(not(containsString("TONSTAD")), containsString("KALLAX"), containsString("BESTÅ"));
+        .body(not(containsString("TONSTAD")), containsString("KALLAX"), containsString("BESTA"));
   }
 }
