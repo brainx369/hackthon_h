@@ -1,0 +1,12 @@
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/domain/usecases/ReplaceWarehouseUseCaseTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/adapters/restapi/WarehouseEndpointIT.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/domain/usecases/CreateWarehouseUseCaseTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/products/ProductEndpointTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/stores/StoreTransactionIntegrationTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/adapters/WarehouseConcurrencyIT.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/location/LocationGatewayTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/adapters/WarehouseTestcontainersIT.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/domain/WarehouseOptimisticLockingTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/stores/StoreEventObserverTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/domain/WarehouseValidationTest.java
+/home/akon/Downloads/hackathon-java-assignment/src/test/java/com/fulfilment/application/monolith/warehouses/domain/usecases/ArchiveWarehouseUseCaseTest.java
